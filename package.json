@@ -1,6 +1,6 @@
 {
   "name": "@sourcepride/json-to-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert JSON or JSON5 config into dotenv (.env) KEY=value text: flatten nested objects, array modes (indexed, JSON, or comma-separated), key casing, and optional prefixes for Node, Docker, and CI/CD.",
   "keywords": [
     "json-to-env",
