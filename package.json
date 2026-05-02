@@ -1,0 +1,78 @@
+{
+  "name": "@sourcepride/json-to-env",
+  "version": "1.0.0",
+  "description": "Convert JSON or JSON5 config into dotenv (.env) KEY=value text: flatten nested objects, array modes (indexed, JSON, or comma-separated), key casing, and optional prefixes for Node, Docker, and CI/CD.",
+  "keywords": [
+    "json-to-env",
+    "json to env",
+    "json5",
+    "json5 to env",
+    "dotenv",
+    "dotenv-format",
+    "env-file",
+    "environment-variables",
+    "env-variables",
+    "key-value",
+    "config-to-env",
+    "nested-json",
+    "flatten-json",
+    "12-factor",
+    "nodejs",
+    "typescript",
+    "docker",
+    "ci-cd",
+    "github-actions",
+    "deployment",
+    "secrets",
+    "settings",
+    "upper-snake-case",
+    "configuration"
+  ],
+  "homepage": "https://github.com/goodnewsj62/json-to-env#readme",
+  "bugs": {
+    "url": "https://github.com/goodnewsj62/json-to-env/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodnewsj62/json-to-env.git"
+  },
+  "license": "MIT",
+  "author": "goodnews",
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "bin": {
+    "json-to-env": "./dist/cjs/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && node scripts/write-esm-package.cjs",
+    "build:shell": "bash scripts/build.sh",
+    "typecheck": "tsc -p tsconfig.cjs.json --noEmit && tsc -p tsconfig.esm.json --noEmit",
+    "prepack": "npm run build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "json5": "^2.2.3"
+  }
+}
